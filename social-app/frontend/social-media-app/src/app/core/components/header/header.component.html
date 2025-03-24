@@ -1,0 +1,31 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="/">Participation</a>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
