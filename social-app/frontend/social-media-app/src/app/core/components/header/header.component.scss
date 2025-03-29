@@ -1,8 +1,8 @@
 .header {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(98, 0, 234, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(98, 0, 234, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -19,16 +19,18 @@
 
 .logo {
   a {
-    color: #3f51b5;
-    font-size: 1.5rem;
+    color: white;
+    font-size: 1.6rem;
     font-weight: 700;
     text-decoration: none;
     display: flex;
     align-items: center;
     transition: color 0.3s;
+    letter-spacing: 0.5px;
 
     &:hover {
-      color: #ff4081;
+      color: var(--secondary-light);
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     }
   }
 }
@@ -38,26 +40,29 @@
   align-items: center;
 
   a {
-    color: #333;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 24px;
     font-weight: 500;
     position: relative;
     transition: all 0.3s;
+    font-size: 1rem;
+    padding: 6px 0;
 
     &:hover {
-      color: #3f51b5;
+      color: white;
     }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: -5px;
+      bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
-      background-color: #3f51b5;
-      transition: width 0.3s;
+      background-color: var(--secondary-light);
+      transition: width 0.3s ease;
+      opacity: 0.8;
     }
 
     &:hover::after {
@@ -66,21 +71,24 @@
   }
 
   .active {
-    color: #3f51b5;
+    color: white;
+    font-weight: 600;
 
     &::after {
       width: 100%;
+      opacity: 1;
+      height: 3px;
     }
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    padding: 10px 15px;
+    padding: 12px 15px;
   }
 
   .logo a {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .nav-links a {

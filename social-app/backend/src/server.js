@@ -31,7 +31,7 @@ app.use("/api/profile", profileRoutes);
 
 // Base route
 app.get("/api", (req, res) => {
-  res.json({ message: "Welcome to the Participation API" });
+  res.json({ message: "Welcome to the Registration API" });
 });
 
 // Error handling middleware
