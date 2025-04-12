@@ -1,11 +1,11 @@
 const db = require("../config/db");
 
 class Profile {
-  static async createProfile(userId, bio = "", location = "", avatar = "") {
+  static async createProfile(userId) {
     try {
       const result = await db.query(
-        "INSERT INTO profiles (user_id, bio, location, avatar) VALUES ($1, $2, $3, $4) RETURNING *",
-        [userId, bio, location, avatar]
+        "INSERT INTO profiles (user_id) VALUES ($1) RETURNING *",
+        [userId]
       );
       return result.rows[0];
     } catch (error) {
@@ -30,11 +30,11 @@ class Profile {
     }
   }
 
-  static async updateProfile(userId, bio, location, avatar) {
+  static async updateProfile(userId) {
     try {
       const result = await db.query(
-        "UPDATE profiles SET bio = $1, location = $2, avatar = $3, updated_at = NOW() WHERE user_id = $4 RETURNING *",
-        [bio, location, avatar, userId]
+        "UPDATE profiles SET updated_at = NOW() WHERE user_id = $1 RETURNING *",
+        [userId]
       );
       return result.rows[0];
     } catch (error) {
